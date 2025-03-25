@@ -1,0 +1,72 @@
+{% extends "authentication/auth_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}<title>{% trans "Sign In" %}</title>{% endblock %}
+
+{% block content %}
+
+  {% for message in messages %}
+    <div class="alert alert-subtle-warning d-flex align-items-center" role="alert">
+      <p class="mb-0 flex-1">{{ message }}!</p>
+      <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+
+  <form method="post">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-subtle-warning d-flex align-items-center" role="alert">
+        {% for error in form.non_field_errors %}
+          <p class="mb-0 flex-1">{{ error }}!</p>
+          <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="mb-3 text-start">
+      <label class="form-label" for="email">{{ form.username.label }}</label>
+
+      <div class="form-icon-container">
+        {{ form.username }}
+        <span class="fas fa-user text-body fs-9 form-icon"></span>
+      </div>
+      {% if form.username.errors %}
+        <div class="text-danger">
+          {% for error in form.username.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="mb-3 text-start">
+      <label class="form-label" for="password">{{ form.password.label }}</label>
+      <div class="form-icon-container" data-password="data-password">
+        {{ form.password }}
+        <span class="fas fa-key text-body fs-9 form-icon"></span>
+        <button type="button" class="btn px-3 py-0 h-100 position-absolute top-0 end-0 fs-7 text-body-tertiary"
+          data-password-toggle="data-password-toggle">
+          <span class="far fa-eye show"></span>
+          <span class="far fa-eye-slash hide"></span>
+        </button>
+      </div>
+      {% if form.password.errors %}
+        <div class="text-danger">
+          {% for error in form.password.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="row flex-between-center mb-3">
+      <div class="col-auto">
+        <a class="fs-9 fw-semibold" href="{% url 'reset_password' %}">{% trans "Forgot Password?" %}</a>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 mb-3">{% trans "Sign In" %}</button>
+  </form>
+
+{% endblock %}

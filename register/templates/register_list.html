@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} <title>{% trans "Register List" %}</title> {% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        <nav class="mb-3" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="#">{% trans "Home Page" %}</a></li>
+            <li class="breadcrumb-item active">{% trans "Register" %}</li>
+          </ol>
+        </nav>
+
+        <h2 class="text-bold text-body-emphasis mb-5">{% trans "Register List" %}</h2>
+
+        {% for message in messages %}
+          <div class="alert alert-subtle-{% if message.tags == 'success' %}success{% else %}warning{% endif %} d-flex align-items-center" role="alert">
+            <p class="mb-0 flex-1">{{ message }}!</p>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+
+        <div id="members" data-list='{"valueNames":["orderId", "fullname", "email", "passport_id", "phone_number_1", "phone_number_2", "gender", "lesson_type", "purpose", "source_of_information", "university", "filial", "region", "program"], "page":10, "pagination":true}'>
+          <div class="row align-items-center justify-content-between g-3 mb-4">
+            <div class="col col-6">
+              <div class="search-box">
+                <div class="position-relative">
+                  <input class="form-control search-input search" type="search" placeholder="{% trans "Search ..." %}" aria-label="Search" />
+                  <span class="fas fa-search search-box-icon"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-flex">
+              <div class="d-flex align-items-center">
+                <button id="export-button" class="btn btn-link text-body me-4 px-0">
+                  <span class="fa-solid fa-file-export fs-9 me-2"></span>
+                  {% trans "Export Excel" %}
+                </button>
+                <button id="export-button-pdf" class="btn btn-link text-body me-4 px-0">
+                  <span class="fa-solid fa-file-export fs-9 me-2"></span>
+                  {% trans "Export PDF" %}
+                </button>
+                <a href="{% url 'register' %}" class="btn btn-primary">
+                  <span class="fas fa-plus me-2"></span>
+                  {% trans "Add Register" %}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mx-n4 mx-lg-n6 px-4 px-lg-6 mb-9 bg-body-emphasis border-y mt-2 position-relative top-1">
+            <div class="table-responsive scrollbar ms-n1 ps-1">
+              <table id="members-table" class="table table-sm fs-9 mb-0">
+                <thead>
+                  <tr>
+                    <th class="sort align-middle" scope="col" data-sort="orderId" style="width:5%;">№</th>
+                    <th class="sort align-middle" scope="col" data-sort="fullname">{% trans "FULLNAME" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="email">{% trans "EMAIL" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="passport_id">{% trans "PASSPORT ID" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="phone_number_1">{% trans "PHONE NUMBER 1" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="phone_number_2">{% trans "PHONE NUMBER 2" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="gender">{% trans "GENDER" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="lesson_type">{% trans "LESSEN TYPE" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="purpose">{% trans "PURPOSE" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="source_of_information">{% trans "SOURCE OF INFORMATION" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="university">{% trans "UNIVERSITY" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="filial">{% trans "FILIAL" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="region">{% trans "REGION" %}</th>
+                    <th class="sort align-middle" scope="col" data-sort="program">{% trans "PROGRAM" %}</th>
+                    <th class="sort text-end align-middle pe-0" scope="col">{% trans "ACTION" %}</th>
+                  </tr>
+                </thead>
+                <tbody class="list" id="members-table-body">
+
+                  {% for register in registers %}
+                    <tr class="hover-actions-trigger btn-reveal-trigger position-static">
+                      <td class="orderId align-middle white-space-nowrap">
+                        <a href="pk:{{ register.id }}" class="fw-semibold">#{{ forloop.counter }}</a>
+                      </td>
+
+                      <td class="fullname align-middle white-space-nowrap text-body">
+                        {{ register.first_name|capfirst }} {{ register.last_name|capfirst }} {{ register.father_name|capfirst }}
+                      </td>
+
+                      <td class="email align-middle white-space-nowrap">
+                        <a class="fw-semibold" href="mailto:{{ register.email }}">{{ register.email }}</a>
+                      </td>
+
+                      <td class="passport_id align-middle white-space-nowrap text-body">{{ register.passport_id }}</td>
+
+                      <td class="phone_number_1 align-middle white-space-nowrap text-body">{{ register.phone_number_1 }}</td>
+                      <td class="phone_number_2 align-middle white-space-nowrap text-body">{{ register.phone_number_2 }}</td>
+                      <td class="gender align-middle white-space-nowrap text-body">{{ register.gender }}</td>
+                      <td class="lesson_type align-middle white-space-nowrap text-body">{{ register.lesson_type }}</td>
+                      <td class="purpose align-middle white-space-nowrap text-body">{{ register.purpose }}</td>
+                      <td class="source_of_information align-middle white-space-nowrap text-body">{{ register.source_of_information }}</td>
+                      <td class="university align-middle white-space-nowrap text-body">{{ register.university }}</td>
+                      <td class="filial align-middle white-space-nowrap text-body">{{ register.filial }}</td>
+                      <td class="region align-middle white-space-nowrap text-body">{{ register.region }}</td>
+                      <td class="program align-middle white-space-nowrap text-body">{{ register.program }}</td>
+
+                      <td class="align-middle white-space-nowrap text-end pe-0">
+                        <div class="btn-reveal-trigger position-static">
+                          <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+                            type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
+                            data-bs-reference="parent">
+                            <span class="fas fa-ellipsis-h fs-10"></span>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end py-2">
+                            <a class="dropdown-item" href="#">{% trans "Edit" %}</a>
+                            <div class="dropdown-divider"></div>
+                            <form action="#" method="post" style="display: inline;">
+                              {% csrf_token %}
+                              <button class="dropdown-item text-danger delete-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-delete-url="#">
+                                {% trans "Delete" %}
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+            <div class="row align-items-center justify-content-between py-2 pe-0 fs-9">
+              <div class="col-auto d-flex">
+                <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body" data-list-info="data-list-info"></p>
+                <a class="fw-semibold" data-list-view="*">
+                  {% trans "View All" %}
+                  <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                </a>
+                <a class="fw-semibold d-none" data-list-view="less">
+                  {% trans "View Less" %}
+                  <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                </a>
+              </div>
+              <div class="col-auto d-flex">
+                <button class="page-link" data-list-pagination="prev">
+                  <span class="fas fa-chevron-left"></span>
+                </button>
+                <ul class="mb-0 pagination"></ul>
+                <button class="page-link pe-0" data-list-pagination="next">
+                  <span class="fas fa-chevron-right"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{% trans "Confirm Deletion" %}</h5>
+            <button class="btn btn-close p-1" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-body-tertiary lh-lg mb-0">{% trans "Are you sure you want to delete this register?" %}</p>
+          </div>
+          <div class="modal-footer">
+            <form id="deleteForm" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+            </form>
+            <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var deleteModal = document.getElementById('exampleModal');
+      deleteModal.addEventListener('show.bs.modal', function(event) {
+          var button = event.relatedTarget;  // Button that triggered the modal
+          var deleteUrl = button.getAttribute('data-delete-url'); // Get the delete URL
+          var deleteForm = document.getElementById('deleteForm');
+
+          if (deleteUrl) {
+              deleteForm.action = deleteUrl;
+          }
+      });
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script>
+  document.getElementById("export-button").addEventListener("click", function () {
+      // Define headers for the Excel file
+      let headers = ["№", "FULLNAME", "USERNAME", "EMAIL", "PASSPORT ID", "PHONE NUMBER 1", "PHONE NUMBER 2"];
+
+      let data = [];
+      data.push(headers); // Add headers to the array
+
+      // Get all rows from the table
+      let rows = document.querySelectorAll("#members-table-body tr");
+
+      rows.forEach((row, index) => {
+          let cols = row.querySelectorAll("td");
+
+          // Extract the full name from the NAME column
+          let fullName = cols[1].innerText.trim();
+          let username = cols[2].innerText.trim();
+
+          // Extract the email
+          let emailElement = cols[3].querySelector("a");
+          let email = emailElement ? emailElement.innerText.trim() : cols[2].innerText.trim();
+
+          // Extract the department name
+          let passport_id = cols[4].innerText.trim();
+          let phone_number_1 = cols[5].innerText.trim();
+          let phone_number_2 = cols[6].innerText.trim();
+
+          let rowData = [
+              cols[0].innerText.trim(), // №
+              fullName, // NAME (Only Full Name)
+              username, // USERNAME
+              email, // EMAIL
+              passport_id, // PASSPORT ID
+              phone_number_1, // PHONE NUMBER 1
+              phone_number_2 // PHONE NUMBER 2
+          ];
+
+          data.push(rowData); // Add row to data array
+      });
+
+      let wb = XLSX.utils.book_new();
+      let ws = XLSX.utils.aoa_to_sheet(data); // Convert array to sheet
+      XLSX.utils.book_append_sheet(wb, ws, "Registers");
+
+      XLSX.writeFile(wb, "Registers.xlsx"); // Save file
+  });
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+
+<script>
+  document.getElementById("export-button-pdf").addEventListener("click", function () {
+      let headers = ["№", "FULLNAME", "USERNAME", "EMAIL", "PASSPORT ID", "PHONE NUMBER 1", "PHONE NUMBER 2"];
+      let data = [];
+
+      // Get all rows from the table
+      let rows = document.querySelectorAll("#members-table-body tr");
+
+      rows.forEach((row) => {
+          let cols = row.querySelectorAll("td");
+
+          // Extract text values
+          let fullName = cols[1].innerText.trim();
+          let username = cols[2].innerText.trim();
+          let emailElement = cols[3].querySelector("a");
+          let email = emailElement ? emailElement.innerText.trim() : cols[2].innerText.trim();
+          let passport_id = cols[4].innerText.trim();
+          let phone_number_1 = cols[5].innerText.trim();
+          let phone_number_2 = cols[6].innerText.trim();
+
+          data.push([
+              cols[0].innerText.trim(), // №
+              fullName, // Name
+              username, // USERNAME
+              email, // Email
+              passport_id, // PASSPORT ID
+              phone_number_1, // PHONE NUMBER 1
+              phone_number_2 // PHONE NUMBER 2
+          ]);
+      });
+
+      let docDefinition = {
+        pageOrientation: "landscape",  // Ensure full-width display
+        pageSize: "A4",  // Set to A4 for better spacing
+        content: [
+            { text: "Register List", style: "header", alignment: "center" },
+            {
+                table: {
+                    headerRows: 1,
+                    widths: ["5%", "20%", "15%", "25%", "11%", "12%", "12%"],
+                    body: [
+                        headers.map(header => ({ text: header, style: "tableHeader" })), // Add headers
+                        ...data.map(row => row.map(cell => ({ text: cell, style: "tableCell" }))) // Add rows
+                    ]
+                },
+                layout: "lightHorizontalLines" // Makes it more readable
+            }
+        ],
+        styles: {
+            header: { fontSize: 18, bold: true, margin: [0, 0, 0, 10] },
+            tableHeader: { bold: true, fillColor: "#003366", color: "#FFFFFF", fontSize: 11 },
+            tableCell: { fontSize: 10, margin: [3, 3, 3, 3] }
+        },
+        defaultStyle: {
+            font: "Roboto" // Ensures proper Azerbaijani character rendering
+        }
+      };
+
+      pdfMake.createPdf(docDefinition).download("Register.pdf");
+  });
+</script>
+
+{% endblock %}
