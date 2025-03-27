@@ -6,14 +6,14 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('account.urls')),
+    # path('', include('account.urls')),
     path('', include('core.urls')),
-    path('', include('flight.urls')),
-    path('', include('hotel.urls')),
-    path('', include('transfer.urls')),
-    path('', include('trip.urls')),
-    path('', include('register.urls')),
-    path('', include('blog.urls')),
+    # path('', include('flight.urls')),
+    # path('', include('hotel.urls')),
+    # path('', include('transfer.urls')),
+    # path('', include('trip.urls')),
+    # path('', include('register.urls')),
+    # path('', include('blog.urls')),
 
 ]
 
@@ -21,7 +21,7 @@ urlpatterns += i18n_patterns()
 
 
 
-# django-admin makemessages -l en -l az -l ru --ignore=env
+# django-admin makemessages -l en -l tr --ignore=env
 # django-admin compilemessages
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -38,14 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'modeltranslation',
-    'trip',
-    'hotel',
-    'register',
-    'account',
+    # 'trip',
+    # 'hotel',
+    # 'register',
+    # 'account',
     'core',
-    'transfer',
-    'flight',
-    'blog'
+    # 'transfer',
+    # 'flight',
+    # 'blog'
 
 ]
 
