@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'modeltranslation',
+    # 'modeltranslation',
     # 'trip',
     # 'hotel',
     # 'register',
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "django.middleware.locale.LocaleMiddleware", # Language
+    # "django.middleware.locale.LocaleMiddleware", # Language
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,14 +123,14 @@ USE_I18N = True
 USE_TZ = True
 
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
+# LOCALE_PATHS = (
+#     os.path.join(BASE_DIR, 'locale'),
+# )
 
-LANGUAGES = (
-    ('en', 'English'),
-    ('tr', 'Turkey'),
-)
+# LANGUAGES = (
+#     ('en', 'English'),
+#     ('tr', 'Turkey'),
+# )
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
