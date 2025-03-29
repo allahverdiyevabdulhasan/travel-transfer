@@ -13,7 +13,7 @@ urlpatterns = [
     # path('', include('transfer.urls')),
     # path('', include('trip.urls')),
     # path('', include('register.urls')),
-    # path('', include('blog.urls')),
+    path('', include('blog.urls')),
 
 ]
 

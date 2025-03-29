@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'core',
     # 'transfer',
     # 'flight',
-    # 'blog'
+    'blog'
 
 ]
 

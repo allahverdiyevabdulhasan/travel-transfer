@@ -1,5 +1,5 @@
 {% load static %}
-{% load i18n %}
+<!-- {% load i18n %} -->
 
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
   <!--    Main Content-->
   <!-- ===============================================-->
   <main class="main" id="top">
-    <div class="bg-primary-subtle py-2">
+    <!-- <div class="bg-primary-subtle py-2">
       <div class="container-medium d-flex align-items-center justify-content-between"><a
           class="btn btn-link p-0 text-body" href="../../pages/authentication/card/sign-in.html"><span
             class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Login</a>
@@ -67,24 +67,25 @@
             data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span
               class="fas fa-ellipsis-h"></span></button>
           <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
-            
+
             <li><a class="dropdown-item" href="#!">Support</a></li>
             <li><a class="dropdown-item" href="#!">+905521532328</a></li>
           </ul>
         </div>
         <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
-       
+
           <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:abdulhasanallahverdiyev@gmail.com"> <span
                 class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
           <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+905521532328"> <span
                 class="fa-brands fa-whatsapp me-2"></span>+905521532328</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
       <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a
           class="navbar-brand flex-1 flex-lg-grow-0 me-lg-8 me-xl-13" href="../../index.html">
-          <div class="d-flex align-items-center"><img src="{% static 'assets/img/icons/logo.png' %}" alt="phoenix" width="27" />
+          <div class="d-flex align-items-center"><img src="{% static 'assets/img/icons/logo.png' %}" alt="phoenix"
+              width="27" />
             <h5 class="logo-text ms-2">Travelx</h5>
           </div>
         </a>
@@ -114,404 +115,385 @@
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
                 href="trip/homepage.html">Gallery</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
-                href="../events/event-detail.html">Contact</a></li>
+                href="{% url 'contact' %}">Contact</a></li>
           </ul>
         </div>
       </nav>
     </div>
-    <div class="booking-hero-header d-flex align-items-center">
-      <div class="bg-holder bg-holder overlay bg-opacity-50"
-        style="background-image:url(../../assets/video/travel.png);"><video class="bg-video" autoplay="autoplay"
-          loop="loop" muted="muted" playsinline="playsinline">
-          <source src="{% static 'assets/video/travel.mp4' %}" type="video/mp4" />
-        </video></div>
-      <!--/.bg-holder-->
-      <div class="container-medium position-relative z-5">
-        <h2 class="text-secondary-lighter fs-5 fs-md-3 fw-normal mb-3">Where is your</h2>
-        <h1 class="fs-4 fs-md-1 text-white fw-normal mb-6 overflow-hidden">NEXT <span class="typed-text text-primary"
-            data-typed-text="[&quot;&lt;span class=text-primary&gt;TRIP!&lt;/span&gt;&quot;,&quot;&lt;span class=text-warning&gt;TOUR?&lt;/span&gt;&quot;, &quot;&lt;span class=text-info&gt;SOJOURN?&lt;/span&gt;&quot;, &quot;&lt;span class=text-success&gt;VACAY?&lt;/span&gt;&quot;]"></span>
-        </h1>
-        <div class="input-group rounded-2 py-1 ps-2 w-lg-50 border border-light">
-          <div class="form-icon-container flex-1 d-flex align-items-center" data-fa-transform="down-1"><span
-              class="fa-solid fa-location-dot form-icon text-danger-light"></span><input
-              class="form-control form-icon-input bg-transparent border-0 outline-none fs-8 fs-md-7 text-secondary-light"
-              type="text" placeholder="Search Destination" /></div>
-          <div class="dropdown d-flex align-items-center"><button
-              class="btn py-0 bg-transparent text-secondary-light fs-8 fs-md-7 fw-semibold border-0 border-start border-light rounded-0"
-              type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-              data-bs-reference="parent">Flight<span class="fa-solid fa-chevron-down ms-2"
-                data-fa-transform="down-1 shrink-4"></span></button>
-            <div class="dropdown-menu dropdown-menu-end" data-bs-theme="dark"><a class="dropdown-item"
-                href="#!">Flight</a><a class="dropdown-item" href="#!">Trip</a><a class="dropdown-item"
-                href="#!">Hotel</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- ============================================-->
     <!-- <section> Galery ============================-->
- 
-    
-   
-    <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="p-0">
-        <div class="container-fluid px-0">
-          <div class="position-relative" style="height: 19rem;">
-            <div class="bg-holder" style="background-image:url(../../../assets/img/bg/44.png);background-position: center; background-size: cover;"></div>
-            <!--/.bg-holder-->
-          </div>
-          <div class="container-small mb-6" style="margin-top: -12rem">
-            <form>
-              <div class="card position-relative mb-6">
-                <div class="card-body">
-                  <div class="mb-4">
-                    <div class="form-check form-check-inline"><input class="form-check-input" id="oneWay" type="radio" name="flightType" /><label class="form-check-label fs-8 text-body" for="oneWay">One way</label></div>
-                    <div class="form-check form-check-inline"><input class="form-check-input" id="return" type="radio" name="flightType" checked="checked" /><label class="form-check-label fs-8 text-body" for="return">Return</label></div>
-                    <div class="form-check form-check-inline"><input class="form-check-input" id="multi" type="radio" name="flightType" /><label class="form-check-label fs-8 text-body" for="multi">Multiple cities</label></div>
-                  </div>
-                  <div class="row g-3 mb-4">
-                    <div class="col-lg">
-                      <div class="row flex-center g-2">
-                        <div class="col-sm">
-                          <div class="form-floating flex-1"><input class="form-control" id="fromLocation" type="text" placeholder="Dhaka (DAC)" /><label for="fromLocation">From</label></div>
-                        </div>
-                        <div class="col-auto"><button class="btn btn-phoenix-secondary circle-btn" type="button"><span class="fas fa-arrows-rotate"></span></button></div>
-                        <div class="col-sm">
-                          <div class="form-floating flex-1"><input class="form-control" id="toLocation" type="text" placeholder="Sylhet (ZYL)" /><label for="toLocation">To</label></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg">
-                      <div class="row g-2">
-                        <div class="col-sm-6">
-                          <div class="form-floating flex-1"><input class="form-control datetimepicker" id="journeyDate" type="text" placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"defaultDate":"today","dateFormat":"j M, Y"}' /><label class="form-label" for="journeyDate">Journey Date</label></div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-floating flex-1"><input class="form-control datetimepicker" id="returnDate" type="text" placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"defaultDate":"today","dateFormat":"j M, Y"}' /><label class="form-label" for="returnDate">Return Date</label></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-auto">
-                      <div class="form-floating" style="min-width: 13rem" data-bs-toggle="dropdown" data-bs-auto-close="outside"><input class="form-control cursor-pointer" id="travelerCount" type="text" readonly="readonly" placeholder="1 Traveler" value="1 Traveler" /><label for="travelerCount">Traveler</label></div>
-                      <div class="dropdown-menu dropdown-menu-start p-4" style="max-width: 20rem">
-                        <div class="row align-items-center g-0 pb-3 border-bottom border-translucent">
-                          <div class="col-5">
-                            <h5 class="mb-0 text-body">Adults</h5>
-                          </div>
-                          <div class="col-7">
-                            <div class="input-group gap-2" data-quantity="data-quantity"><button class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span class="fa-solid fa-minus px-1"></span></button><input class="form-control border-translucent input-spin-none text-center rounded" id="adults" type="number" value="1" /><button class="btn btn-phoenix-primary px-2 rounded" data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
-                          </div>
-                        </div>
-                        <div class="row align-items-center g-0 py-3 border-bottom border-translucent">
-                          <div class="col-5">
-                            <h5 class="mb-0 text-body">Infants</h5>
-                          </div>
-                          <div class="col-7">
-                            <div class="input-group gap-2" data-quantity="data-quantity"><button class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span class="fa-solid fa-minus px-1"></span></button><input class="form-control border-translucent input-spin-none text-center rounded" id="infants" type="number" value="0" /><button class="btn btn-phoenix-primary px-2 rounded" data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
-                          </div>
-                        </div>
-                        <div class="row align-items-center g-0 py-3">
-                          <div class="col-5">
-                            <h5 class="mb-0 text-body">Children</h5>
-                          </div>
-                          <div class="col-7">
-                            <div class="input-group gap-2" data-quantity="data-quantity"><button class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span class="fa-solid fa-minus px-1"></span></button><input class="form-control border-translucent input-spin-none text-center rounded" id="child" type="number" value="0" /><button class="btn btn-phoenix-primary px-2 rounded" data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
-                          </div>
-                        </div><button class="btn btn-primary w-100" type="button">Complete</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="bg-body-highlight p-3 p-sm-4 rounded-2 mb-4">
-                    <div class="row g-3">
-                      <div class="col-xl-2 col-lg col-md-4">
-                        <h6 class="mb-2">Fare Type</h6>
-                        <div class="form-check mb-0"><input class="form-check-input mt-0" id="flightFareType" type="checkbox" checked="checked" /><label class="form-check-label d-block lh-sm fs-8 text-body fw-normal mb-0" for="flightFareType">Refundable ticket</label></div>
-                      </div>
-                      <div class="col-xl-2 col-lg col-md-4">
-                        <h6 class="mb-3">Price Range</h6>
-                        <div class="noUi-primary-lighter noUi-handle-primary noUi-slider-slim noUi-handle-circle px-1 mb-3" data-nouislider='{"start":[100,186],"range":{"min":100,"max":200},"connect":true}'></div>
-                        <div class="d-flex flex-between-center">
-                          <div> <small class="d-none d-lg-block text-body-tertiary">Min</small>
-                            <h6 class="mb-0 text-body-highlight fw-semibold">$100</h6>
-                          </div>
-                          <div class="text-end"> <small class="d-none d-lg-block text-body-tertiary">Max</small>
-                            <h6 class="mb-0 text-body-highlight fw-semibold">$200</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-2 col-lg col-md-4">
-                        <h6 class="mb-2">Class</h6><select class="form-select" id="flightClass">
-                          <option>Economy</option>
-                          <option>Business</option>
-                          <option>First class</option>
-                        </select>
-                      </div>
-                      <div class="col-xl-2 col-lg col-md-6 ms-auto">
-                        <h6 class="mb-2">Onward depart time</h6><select class="form-select" id="departTime">
-                          <option>12:00 - 18:00</option>
-                          <option>18:00 - 24:00</option>
-                          <option>06:00 - 12:00</option>
-                        </select>
-                      </div>
-                      <div class="col-xl-2 col-lg col-md-6">
-                        <h6 class="mb-2">Return depart time</h6><select class="form-select" id="returnTime">
-                          <option>12:00 - 18:00</option>
-                          <option>18:00 - 24:00</option>
-                          <option>06:00 - 12:00</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-wrap gap-3 justify-content-between"> <a class="fw-semibold text-nowrap" href="#!" data-list-view="*">Close details <span class="fas fa-angle-up ms-1" data-fa-transform="down-1"></span></a><button class="btn btn-lg btn-primary flex-1" type="button" style="max-width: 15rem">Search</button></div>
-                </div>
-              </div>
-            </form>
-            <div class="d-flex flex-between-center mb-3">
-              <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item" role="presentation"><button class="nav-link" data-wizard-step="data-wizard-step" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">Cheapest</button></li>
-                <li class="nav-item" role="presentation"><button class="nav-link active" data-wizard-step="data-wizard-step" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">Fastest</button></li>
-              </ul><button class="btn btn-phoenix-secondary text-nowrap px-4" type="button" data-bs-toggle="modal" data-bs-target="#flightFilterModal"><span class="fa-solid fa-filter me-md-2"></span><span class="d-none d-md-inline-block">Filters</span></button>
-            </div>
-            <div class="py-7 border-top">
-              <div class="row g-0 gap-6 align-items-center">
-                <div class="col-lg">
-                  <div class="d-flex flex-column gap-md-3 gap-6">
-                    <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
-                      <div class="col-sm-auto col-md-5">
-                        <div class="d-flex flex-center justify-content-sm-start gap-4"> <img class="flight-list-item-logo img-fluid rounded-3" src="../../../assets/img/brand/qatar-airline.png" alt="" />
-                          <h5 class="d-none d-md-block text-nowrap text-body-highlight">Qatar Airways</h5>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <div class="d-flex gap-4 justify-content-center">
-                          <div>
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">DAC</h4>
-                            <h2 class="mb-0">7:45</h2>
-                          </div>
-                          <div class="text-center">
-                            <p class="mb-2 fs-9 text-body-tertiary">25m</p>
-                            <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip" src="../../../assets/img/icons/long-arrow.svg" alt="" />
-                          </div>
-                          <div class="text-end">
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">CGP</h4>
-                            <h2 class="mb-0">8:10</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
-                      <div class="col-sm-auto col-md-5">
-                        <div class="d-flex flex-center justify-content-sm-start gap-4"> <img class="flight-list-item-logo img-fluid rounded-3" src="../../../assets/img/brand/qatar-airline.png" alt="" />
-                          <h5 class="d-none d-md-block text-nowrap text-body-highlight">Qatar Airways</h5>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <div class="d-flex gap-4 justify-content-center">
-                          <div>
-                            <p class="mb-2 fs-9 text-body-tertiary">27 Jan</p>
-                            <h4 class="mb-2 text-body">CGP</h4>
-                            <h2 class="mb-0">8:15</h2>
-                          </div>
-                          <div class="text-center">
-                            <p class="mb-2 fs-9 text-body-tertiary">25m</p>
-                            <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip" src="../../../assets/img/icons/long-arrow.svg" alt="" />
-                          </div>
-                          <div class="text-end">
-                            <p class="mb-2 fs-9 text-body-tertiary">27 Jan</p>
-                            <h4 class="mb-2 text-body">DAC</h4>
-                            <h2 class="mb-0">8:45</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-auto">
-                  <div class="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
-                    <h3 class="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center"><span class="fs-9 text-body-quaternary fw-normal text-decoration-line-through">$150.00</span>$124.00</h3><a class="btn btn-primary px-9" href="booking.html">Select</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="py-7 border-top">
-              <div class="row g-0 gap-6 align-items-center">
-                <div class="col-lg">
-                  <div class="d-flex flex-column gap-md-3 gap-6">
-                    <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
-                      <div class="col-sm-auto col-md-5">
-                        <div class="d-flex flex-center justify-content-sm-start gap-4"> <img class="flight-list-item-logo img-fluid rounded-3" src="../../../assets/img/brand/emirates-airline.png" alt="" />
-                          <h5 class="d-none d-md-block text-nowrap text-body-highlight">Emirates</h5>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <div class="d-flex gap-4 justify-content-center">
-                          <div>
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">DAC</h4>
-                            <h2 class="mb-0">7:55</h2>
-                          </div>
-                          <div class="text-center">
-                            <p class="mb-2 fs-9 text-body-tertiary">25m</p>
-                            <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip" src="../../../assets/img/icons/long-arrow.svg" alt="" />
-                          </div>
-                          <div class="text-end">
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">ZYL</h4>
-                            <h2 class="mb-0">8:20</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-auto">
-                  <div class="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
-                    <h3 class="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center"><span class="fs-9 text-body-quaternary fw-normal text-decoration-line-through">$139.00</span>$120.00</h3><a class="btn btn-primary px-9" href="booking.html">Select</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="py-7 border-top">
-              <div class="row g-0 gap-6 align-items-center">
-                <div class="col-lg">
-                  <div class="d-flex flex-column gap-md-3 gap-6">
-                    <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
-                      <div class="col-sm-auto col-md-5">
-                        <div class="d-flex flex-center justify-content-sm-start gap-4"> <img class="flight-list-item-logo img-fluid rounded-3" src="../../../assets/img/brand/japan-airline.png" alt="" />
-                          <h5 class="d-none d-md-block text-nowrap text-body-highlight">Japan Airlines</h5>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <div class="d-flex gap-4 justify-content-center">
-                          <div>
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">DAC</h4>
-                            <h2 class="mb-0">8:45</h2>
-                          </div>
-                          <div class="text-center">
-                            <p class="mb-2 fs-9 text-body-tertiary">25m</p>
-                            <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip" src="../../../assets/img/icons/long-arrow.svg" alt="" />
-                          </div>
-                          <div class="text-end">
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">ZYL</h4>
-                            <h2 class="mb-0">9:10</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-auto">
-                  <div class="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
-                    <h3 class="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center"><span class="fs-9 text-body-quaternary fw-normal text-decoration-line-through">$144.00</span>$128.00</h3><a class="btn btn-primary px-9" href="booking.html">Select</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="py-7 border-top">
-              <div class="row g-0 gap-6 align-items-center">
-                <div class="col-lg">
-                  <div class="d-flex flex-column gap-md-3 gap-6">
-                    <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
-                      <div class="col-sm-auto col-md-5">
-                        <div class="d-flex flex-center justify-content-sm-start gap-4"> <img class="flight-list-item-logo img-fluid rounded-3" src="../../../assets/img/brand/qatar-airline.png" alt="" />
-                          <h5 class="d-none d-md-block text-nowrap text-body-highlight">Qatar Airways</h5>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <div class="d-flex gap-4 justify-content-center">
-                          <div>
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">DAC</h4>
-                            <h2 class="mb-0">8:55</h2>
-                          </div>
-                          <div class="text-center">
-                            <p class="mb-2 fs-9 text-body-tertiary">25m</p>
-                            <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip" src="../../../assets/img/icons/long-arrow.svg" alt="" />
-                          </div>
-                          <div class="text-end">
-                            <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
-                            <h4 class="mb-2 text-body">ZYL</h4>
-                            <h2 class="mb-0">9:15</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-auto">
-                  <div class="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
-                    <h3 class="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center"><span class="fs-9 text-body-quaternary fw-normal text-decoration-line-through">$150.00</span>$124.00</h3><a class="btn btn-primary px-9" href="booking.html">Select</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-4 position-relative text-center">
-              <hr class="m-0 position-absolute top-50 translate-middle-y w-100" /><button class="btn btn-phoenix-secondary rounded-pill position-relative">Show more</button>
-            </div>
-          </div>
-          <footer class="mb-6">
-            <div class="container-small-md px-0 px-md-3">
-              <div class="position-relative overflow-hidden rounded-md-2">
-                <div class="bg-holder bg-holder overlay bg-opacity-75" style="background-image:url(../../../assets/img/bg/45.png);background-position: center; background-size: cover;"></div>
-                <!--/.bg-holder-->
-                <div class="row g-lg-0 gy-3 position-relative justify-content-center py-9 px-3 px-sm-6 px-xl-15">
-                  <div class="col-11 col-sm-8 col-lg-5">
-                    <div class="input-group gap-2">
-                      <div class="form-icon-container flex-1"><input class="form-control form-icon-input" type="email" placeholder="Your email address" /><span class="fa-solid fa-envelope form-icon" data-fa-transform="up-2"></span></div><button class="btn btn-primary rounded">Sign up</button>
-                    </div>
-                  </div>
-                  <div class="col-md-7" data-bs-theme="light">
-                    <div class="d-flex flex-column flex-lg-row gap-lg-6 gap-2 align-items-center justify-content-lg-end justify-content-center">
-                      <ul class="nav">
-                        <li class="nav-item"><a class="nav-link link-light" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link link-light" href="#!">Policy</a></li>
-                        <li class="nav-item"><a class="nav-link link-light" href="#!">Terms & Condition</a></li>
-                      </ul>
-                      <div><a class="pe-1 me-2 link-light" href="#!"><span class="fab fa-facebook"></span></a><a class="pe-1 me-2 link-light" href="#!"><span class="fab fa-twitter"></span></a><a class="pe-1 me-2 link-light" href="#!"><span class="fab fa-instagram"></span></a><a class="link-light" href="#!"><span class="fab fa-youtube"></span></a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </footer>
-          <div class="container-medium">
-            <div class="d-flex align-items-center justify-content-between mb-3"><a class="navbar-brand" href="../../../index.html">
-                <div class="d-flex align-items-center"><img src="../../../assets/img/icons/logo.png" alt="phoenix" width="27" />
-                  <h5 class="logo-text ms-2">phoenix</h5>
-                </div>
-              </a>
-              <div class="dropdown"><button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
-                <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
-                  <li><a class="dropdown-item" href="#!">Become a Host</a></li>
-                  <li><a class="dropdown-item" href="#!">Blog</a></li>
-                  <li><a class="dropdown-item" href="#!">Career</a></li>
-                  <li><a class="dropdown-item" href="#!">Support</a></li>
-                  <li><a class="dropdown-item" href="#!">+905521532328</a></li>
-                </ul>
-              </div>
-              <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
-                <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
-                <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
-                <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
-                <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
-                <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+905521532328"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
 
-   
+
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="p-0">
+      <div class="container-fluid px-0">
+        <div class="position-relative" style="height: 19rem;">
+          <div class="bg-holder"
+            style="background-image:url(../../../assets/img/bg/44.png);background-position: center; background-size: cover;">
+          </div>
+          <!--/.bg-holder-->
+        </div>
+        <div class="container-small mb-6" style="margin-top: -12rem">
+          <form>
+            <div class="card position-relative mb-6">
+              <div class="card-body">
+                <div class="mb-4">
+                  <div class="form-check form-check-inline"><input class="form-check-input" id="oneWay" type="radio"
+                      name="flightType" /><label class="form-check-label fs-8 text-body" for="oneWay">One way</label>
+                  </div>
+                  <div class="form-check form-check-inline"><input class="form-check-input" id="return" type="radio"
+                      name="flightType" checked="checked" /><label class="form-check-label fs-8 text-body"
+                      for="return">Return</label></div>
+                </div>
+                <div class="row g-3 mb-4">
+                  <div class="col-lg">
+                    <div class="row flex-center g-2">
+                      <div class="col-sm">
+                        <div class="form-floating flex-1"><input class="form-control" id="fromLocation" type="text"
+                            placeholder="Dhaka (DAC)" /><label for="fromLocation">Enter Pick-up location</label></div>
+                      </div>
+                      <div class="col-auto"><button class="btn btn-phoenix-secondary circle-btn" type="button"><span
+                            class="fas fa-arrows-rotate"></span></button></div>
+                      <div class="col-sm">
+                        <div class="form-floating flex-1"><input class="form-control" id="toLocation" type="text"
+                            placeholder="Sylhet (ZYL)" /><label for="toLocation">Enter Destination</label></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg">
+                    <div class="row g-2">
+                      <div class="col-sm-6">
+                        <div class="form-floating flex-1"><input class="form-control datetimepicker" id="journeyDate"
+                            type="text" placeholder="dd/mm/yyyy"
+                            data-options='{"disableMobile":true,"defaultDate":"today","dateFormat":"j M, Y"}' /><label
+                            class="form-label" for="journeyDate">Journey Date</label></div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-floating flex-1"><input class="form-control datetimepicker" id="returnDate"
+                            type="text" placeholder="dd/mm/yyyy"
+                            data-options='{"disableMobile":true,"defaultDate":"today","dateFormat":"j M, Y"}' /><label
+                            class="form-label" for="returnDate">Return Date</label></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-floating" style="min-width: 13rem" data-bs-toggle="dropdown"
+                      data-bs-auto-close="outside"><input class="form-control cursor-pointer" id="travelerCount"
+                        type="text" readonly="readonly" placeholder="1 Traveler" value="1 Traveler" /><label
+                        for="travelerCount">Traveler</label></div>
+                    <div class="dropdown-menu dropdown-menu-start p-4" style="max-width: 20rem">
+                      <div class="row align-items-center g-0 pb-3 border-bottom border-translucent">
+                        <div class="col-5">
+                          <h5 class="mb-0 text-body">Adults</h5>
+                        </div>
+                        <div class="col-7">
+                          <div class="input-group gap-2" data-quantity="data-quantity"><button
+                              class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span
+                                class="fa-solid fa-minus px-1"></span></button><input
+                              class="form-control border-translucent input-spin-none text-center rounded" id="adults"
+                              type="number" value="1" /><button class="btn btn-phoenix-primary px-2 rounded"
+                              data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
+                        </div>
+                      </div>
+                      <div class="row align-items-center g-0 py-3 border-bottom border-translucent">
+                        <div class="col-5">
+                          <h5 class="mb-0 text-body">Infants</h5>
+                        </div>
+                        <div class="col-7">
+                          <div class="input-group gap-2" data-quantity="data-quantity"><button
+                              class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span
+                                class="fa-solid fa-minus px-1"></span></button><input
+                              class="form-control border-translucent input-spin-none text-center rounded" id="infants"
+                              type="number" value="0" /><button class="btn btn-phoenix-primary px-2 rounded"
+                              data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
+                        </div>
+                      </div>
+                      <div class="row align-items-center g-0 py-3">
+                        <div class="col-5">
+                          <h5 class="mb-0 text-body">Children</h5>
+                        </div>
+                        <div class="col-7">
+                          <div class="input-group gap-2" data-quantity="data-quantity"><button
+                              class="btn btn-phoenix-primary px-2 rounded" data-type="minus" type="button"><span
+                                class="fa-solid fa-minus px-1"></span></button><input
+                              class="form-control border-translucent input-spin-none text-center rounded" id="child"
+                              type="number" value="0" /><button class="btn btn-phoenix-primary px-2 rounded"
+                              data-type="plus" type="button"><span class="fa-solid fa-plus px-1"></span></button></div>
+                        </div>
+                      </div><button class="btn btn-primary w-100" type="button">Complete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-body-highlight p-3 p-sm-4 rounded-2 mb-4">
+                  <div class="row g-3">
+                    <div class="col-xl-2 col-lg col-md-4">
+                      <h6 class="mb-2">Fare Type</h6>
+                      <div class="form-check mb-0"><input class="form-check-input mt-0" id="flightFareType"
+                          type="checkbox" checked="checked" /><label
+                          class="form-check-label d-block lh-sm fs-8 text-body fw-normal mb-0"
+                          for="flightFareType">Refundable ticket</label></div>
+                    </div>
+                    <div class="col-xl-2 col-lg col-md-4">
+                      <h6 class="mb-3">Price Range</h6>
+                      <div
+                        class="noUi-primary-lighter noUi-handle-primary noUi-slider-slim noUi-handle-circle px-1 mb-3"
+                        data-nouislider='{"start":[100,186],"range":{"min":100,"max":200},"connect":true}'></div>
+                      <div class="d-flex flex-between-center">
+                        <div> <small class="d-none d-lg-block text-body-tertiary">Min</small>
+                          <h6 class="mb-0 text-body-highlight fw-semibold">$100</h6>
+                        </div>
+                        <div class="text-end"> <small class="d-none d-lg-block text-body-tertiary">Max</small>
+                          <h6 class="mb-0 text-body-highlight fw-semibold">$200</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-2 col-lg col-md-4">
+                      <h6 class="mb-2">Class</h6><select class="form-select" id="flightClass">
+                        <option>Economy</option>
+                        <option>Business</option>
+                        <option>First class</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-2 col-lg col-md-6 ms-auto">
+                      <h6 class="mb-2">Onward depart time</h6><select class="form-select" id="departTime">
+                        <option>12:00 - 18:00</option>
+                        <option>18:00 - 24:00</option>
+                        <option>06:00 - 12:00</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-2 col-lg col-md-6">
+                      <h6 class="mb-2">Return depart time</h6><select class="form-select" id="returnTime">
+                        <option>12:00 - 18:00</option>
+                        <option>18:00 - 24:00</option>
+                        <option>06:00 - 12:00</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex flex-wrap gap-3 justify-content-between"> <a class="fw-semibold text-nowrap"
+                    href="#!" data-list-view="*">Close details <span class="fas fa-angle-up ms-1"
+                      data-fa-transform="down-1"></span></a><button class="btn btn-lg btn-primary flex-1" type="button"
+                    style="max-width: 15rem">Search</button></div>
+              </div>
+            </div>
+          </form>
+          <div class="d-flex flex-between-center mb-3">
+            <ul class="nav nav-pills" role="tablist">
+              <li class="nav-item" role="presentation"><button class="nav-link" data-wizard-step="data-wizard-step"
+                  data-bs-toggle="pill" type="button" role="tab" aria-selected="true">Cheapest</button></li>
+              <li class="nav-item" role="presentation"><button class="nav-link active"
+                  data-wizard-step="data-wizard-step" data-bs-toggle="pill" type="button" role="tab"
+                  aria-selected="false">Fastest</button></li>
+            </ul><button class="btn btn-phoenix-secondary text-nowrap px-4" type="button" data-bs-toggle="modal"
+              data-bs-target="#flightFilterModal"><span class="fa-solid fa-filter me-md-2"></span><span
+                class="d-none d-md-inline-block">Filters</span></button>
+          </div>
+          <div class="py-7 border-top">
+            <div class="row g-0 gap-6 align-items-center">
+              <div class="col-lg">
+                <div class="d-flex flex-column gap-md-3 gap-6">
+                  <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
+                    <div class="col-sm-auto col-md-5">
+                      <div class="d-flex flex-center justify-content-sm-start gap-4"> <img
+                          class="flight-list-item-logo img-fluid rounded-3"
+                          src="{% static 'assets/img/brand/qatar-airline.png'%}" alt="" />
+                        <h5 class="d-none d-md-block text-nowrap text-body-highlight">Qatar Airways</h5>
+                      </div>
+                    </div>
+                    <div class="col-sm-auto">
+                      <div class="d-flex gap-4 justify-content-center">
+                        <div>
+                          <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
+                          <h4 class="mb-2 text-body">DAC</h4>
+                          <h2 class="mb-0">7:45</h2>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-2 fs-9 text-body-tertiary">25m</p>
+                          <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip"
+                            src="{% static 'assets/img/icons/long-arrow.svg'%}" alt="" />
+                        </div>
+                        <div class="text-end">
+                          <p class="mb-2 fs-9 text-body-tertiary">25 Jan</p>
+                          <h4 class="mb-2 text-body">CGP</h4>
+                          <h2 class="mb-0">8:10</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start">
+                    <div class="col-sm-auto col-md-5">
+                      <div class="d-flex flex-center justify-content-sm-start gap-4"> <img
+                          class="flight-list-item-logo img-fluid rounded-3"
+                          src="{% static 'assets/img/brand/qatar-airline.png'%}" alt="" />
+                        <h5 class="d-none d-md-block text-nowrap text-body-highlight">Qatar Airways</h5>
+                      </div>
+                    </div>
+                    <div class="col-sm-auto">
+                      <div class="d-flex gap-4 justify-content-center">
+                        <div>
+                          <p class="mb-2 fs-9 text-body-tertiary">27 Jan</p>
+                          <h4 class="mb-2 text-body">CGP</h4>
+                          <h2 class="mb-0">8:15</h2>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-2 fs-9 text-body-tertiary">25m</p>
+                          <p class="mb-2 fs-9 text-body-tertiary">Non-stop</p><img class="position-relative rtl__flip"
+                            src="{% static 'assets/img/icons/long-arrow.svg'%}" alt="" />
+                        </div>
+                        <div class="text-end">
+                          <p class="mb-2 fs-9 text-body-tertiary">27 Jan</p>
+                          <h4 class="mb-2 text-body">DAC</h4>
+                          <h2 class="mb-0">8:45</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-auto">
+                <div class="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
+                  <h3 class="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center"><span
+                      class="fs-9 text-body-quaternary fw-normal text-decoration-line-through">$150.00</span>$124.00
+                  </h3><a class="btn btn-primary px-9" href="booking.html">Select</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 position-relative text-center">
+            <hr class="m-0 position-absolute top-50 translate-middle-y w-100" /><button
+              class="btn btn-phoenix-secondary rounded-pill position-relative">Show more</button>
+          </div>
+        </div>
+
+
+      </div><!-- end of .container-->
+    </section><!-- <section> close ============================-->
+    <!-- ============================================-->
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="pt-10" id="blog">
+      <div class="container-small px-lg-7 px-xxl-3">
+        <div class="text-center mb-5 mb-8">
+          <h5 class="text-info mb-3">Blogs</h5>
+          <h2 class="mb-2">Our most viewed articles</h2>
+        </div>
+        <div class="row gx-3 gy-7">
+         
+          <div class="col-lg-4">
+            <div class="blog-card"><img class="w-100 rounded-3" src="{% static 'assets/img/blog/blog-6.png'%}" alt="" />
+              <div class="d-flex align-items-cente mt-3"></div>
+              <span class="badge text-bg-primary mb-2 mt-4">Marketing</span>
+              <h4 class="mb-3 pe-sm-5 lh-lg">Top 12 Marketing strategies you can take</h4><a
+                class="btn-link px-0 d-flex align-items-center fs-9 fw-bold" href="#!" role="button">See more<span
+                  class="fa-solid fa-angle-right ms-2"></span></a>
+            </div>
+          </div>
+          
+        </div>
+      </div><!-- end of .container-->
+    </section>
+
+    <section class="pb-0 bg-body-emphasis overflow-hidden position-static">
+      <div class="container-small px-lg-7 px-xxl-3">
+        <div class="row">
+          <div class="col-lg-6 mb-6 text-center text-lg-start z-2">
+            <h4 class="text-primary fw-bolder mb-3">Testimonial</h4>
+            <h2 class="mb-3 text-body-emphasis">More than 2 Millions happy<br />Customers and counting</h2>
+            <p class="mb-5">You may now concentrate on the functionality and other <br class="d-none d-sm-block" />aspects of your web products thanks to Phoenix's strength<br class="d-none d-sm-block" />before leaving the UI design to us. It is simple to complete<br class="d-none d-sm-block" />the work after checking and double-checking.</p>
+          </div>
+          <div class="col-lg-6 z-2">
+            <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row g-1 g-lg-0 g-xl-1 pb-lg-3 pb-xl-0 ps-lg-1 ps-xl-0">
+                    <div class="col-lg-6 col-xl-5 text-center">
+                      <div class="testimonial-avatar-container d-inline-block position-relative">
+                        <div class="bg-holder" style="background-image:url({% static 'assets/img/bg/bg-2.png'%});background-size:contain;"></div>
+                        <!--/.bg-holder-->
+                        <img class="rounded-3 mb-lg-0 opacity-100 position-relative" src="{% static 'assets/img/team/61.webp'%}" width="153" height="153" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-7 text-center text-lg-start">
+                      <div class="mb-4" data-bs-theme="light"><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span></div>
+                      <h3 class="fs-7 fs-xl-6 mb-5 lh-sm me-md-7 me-lg-0">Brilliant app! Will definitely going to be my first choice starting from today</h3>
+                      <h6>Monica Gomez</h6>
+                      <h6 class="fw-normal">UX designer, Google</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ============================================-->
     <!-- <section> Footer ============================-->
+
+      <section id="team">
+        <div class="bg-holder z-2" style="background-image:url('{% static 'assets/img/bg/bg-left-17.png'%}');background-size:auto;background-position:left center;"></div>
+        <!--/.bg-holder-->
+        <div class="bg-holder z-2" style="background-image:url('{% static 'assets/img/bg/bg-right-17.png'%}');background-size:auto;background-position:right center;"></div>
+        <!--/.bg-holder-->
+        <div class="position-absolute top-0 end-0 start-0"><svg class="w-100 text-white" preserveAspectRatio="none" viewBox="0 0 1920 368" xmlns="http://www.w3.org/2000/svg">
+            <path class="fill-emphasis-bg" d="M1920 0.44L0 367.74V0H1920V0.44Z"></path>
+          </svg></div>
+        <div class="position-absolute bottom-0 end-0 start-0"><svg class="text-white w-100" viewBox="0 0 1920 368" xmlns="http://www.w3.org/2000/svg">
+            <path class="fill-emphasis-bg" d="M0 368L1920 0.730011L1920 368L0 368Z"></path>
+          </svg></div>
+        <div class="container-small position-relative py-1 px-lg-7 px-xxl-3" style="z-index:10">
+          <div class="mb-4 text-center text-sm-start">
+            <h4 class="text-primary fw-bolder mb-3">Team</h4>
+            <h2>Our small team behind our success</h2>
+          </div>
+          <p class="column-md-2 text-center text-sm-start">We have a small but strong development team to follow up on the development process. Reach out to us for further information. The team is ready to answer all your questions within minutes. The efficient team is always at your beck and call.</p>
+          <div class="row align-items-center ps-lg-11 pe-lg-9">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="text-center mt-5 position-relative">
+                <div class="team-avatar-container d-inline-block position-relative">
+                  <div class="bg-holder" style="background-image:url('{% static 'assets/img/bg/bg-21.png'%}');background-size:contain;"></div>
+                  <!--/.bg-holder-->
+                  <img class="img-fluid rounded mb-3 position-relative" src="{% static 'assets/img/team/62.webp'%}" alt="..." />
+                </div>
+                <h4>John Smith</h4>
+                <h6 class="mb-3 fw-semibold">CEO, Global Cheat</h6><a href="#!"><span class="fa-brands fa-facebook text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-twitter text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-linkedin-in text-primary"></span></a>
+              </div>
+            </div>
+         
+           
+          </div>
+        </div>
+      </section>
+<!-- ============================================-->
+      <!-- <section> begin ============================-->
+        <section>
+          <div class="container-small px-lg-7 px-xxl-3">
+            <div class="row g-0">
+              {% for partner in partners %}
+        
+              <div class="col-6 col-md-3">
+                <div class="p-2 p-lg-5 d-flex flex-center h-100 border-1 border-dashed border-bottom border-end border-translucent"><img class="img-fluid" src="{{ partner.image.url }}" alt="Partner" width="200"/></div>
+              </div>
+              {% endfor %}
+            </div>
+          </div><!-- end of .container-->
+        </section><!-- <section> close ============================-->
+        <!-- ============================================-->
+  
+  <!-- ============================================-->
+      <!-- <section> Contact ============================-->
+      
+        {% block content %}
+        {% endblock %}
+
     <section class="booking-footer pb-6 pb-md-11 pt-15">
       <div class="container-medium">
         <div class="row gy-3 justify-content-between align-items-center">
@@ -537,15 +519,16 @@
                 href="https://neymantech.com/">Neyman Enterprise Technologies</a></p>
           </div>
         </div>
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
+      </div>
+    </section>
+    <!-- <section> close ============================-->
     <!-- ============================================-->
 
   </main><!-- ===============================================-->
   <!--    End of Main Content-->
   <!-- ===============================================-->
 
-  
+
 
   <!-- ===============================================-->
   <!--    JavaScripts-->
