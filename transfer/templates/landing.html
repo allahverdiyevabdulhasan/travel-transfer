@@ -111,7 +111,7 @@
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
                 href="hotel/customer/homepage.html">About</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
-                href="flight/homepage.html">Blog</a></li>
+                href="{% url 'blog' %}l">Blog</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
                 href="trip/homepage.html">Gallery</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
@@ -376,123 +376,7 @@
     <!-- ============================================-->
 
     <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="pt-10" id="blog">
-      <div class="container-small px-lg-7 px-xxl-3">
-        <div class="text-center mb-5 mb-8">
-          <h5 class="text-info mb-3">Blogs</h5>
-          <h2 class="mb-2">Our most viewed articles</h2>
-        </div>
-        <div class="row gx-3 gy-7">
-         
-          <div class="col-lg-4">
-            <div class="blog-card"><img class="w-100 rounded-3" src="{% static 'assets/img/blog/blog-6.png'%}" alt="" />
-              <div class="d-flex align-items-cente mt-3"></div>
-              <span class="badge text-bg-primary mb-2 mt-4">Marketing</span>
-              <h4 class="mb-3 pe-sm-5 lh-lg">Top 12 Marketing strategies you can take</h4><a
-                class="btn-link px-0 d-flex align-items-center fs-9 fw-bold" href="#!" role="button">See more<span
-                  class="fa-solid fa-angle-right ms-2"></span></a>
-            </div>
-          </div>
-          
-        </div>
-      </div><!-- end of .container-->
-    </section>
 
-    <section class="pb-0 bg-body-emphasis overflow-hidden position-static">
-      <div class="container-small px-lg-7 px-xxl-3">
-        <div class="row">
-          <div class="col-lg-6 mb-6 text-center text-lg-start z-2">
-            <h4 class="text-primary fw-bolder mb-3">Testimonial</h4>
-            <h2 class="mb-3 text-body-emphasis">More than 2 Millions happy<br />Customers and counting</h2>
-            <p class="mb-5">You may now concentrate on the functionality and other <br class="d-none d-sm-block" />aspects of your web products thanks to Phoenix's strength<br class="d-none d-sm-block" />before leaving the UI design to us. It is simple to complete<br class="d-none d-sm-block" />the work after checking and double-checking.</p>
-          </div>
-          <div class="col-lg-6 z-2">
-            <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row g-1 g-lg-0 g-xl-1 pb-lg-3 pb-xl-0 ps-lg-1 ps-xl-0">
-                    <div class="col-lg-6 col-xl-5 text-center">
-                      <div class="testimonial-avatar-container d-inline-block position-relative">
-                        <div class="bg-holder" style="background-image:url({% static 'assets/img/bg/bg-2.png'%});background-size:contain;"></div>
-                        <!--/.bg-holder-->
-                        <img class="rounded-3 mb-lg-0 opacity-100 position-relative" src="{% static 'assets/img/team/61.webp'%}" width="153" height="153" alt="" />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-7 text-center text-lg-start">
-                      <div class="mb-4" data-bs-theme="light"><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span><span class="fa fa-star text-primary"></span></div>
-                      <h3 class="fs-7 fs-xl-6 mb-5 lh-sm me-md-7 me-lg-0">Brilliant app! Will definitely going to be my first choice starting from today</h3>
-                      <h6>Monica Gomez</h6>
-                      <h6 class="fw-normal">UX designer, Google</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============================================-->
-    <!-- <section> Footer ============================-->
-
-      <section id="team">
-        <div class="bg-holder z-2" style="background-image:url('{% static 'assets/img/bg/bg-left-17.png'%}');background-size:auto;background-position:left center;"></div>
-        <!--/.bg-holder-->
-        <div class="bg-holder z-2" style="background-image:url('{% static 'assets/img/bg/bg-right-17.png'%}');background-size:auto;background-position:right center;"></div>
-        <!--/.bg-holder-->
-        <div class="position-absolute top-0 end-0 start-0"><svg class="w-100 text-white" preserveAspectRatio="none" viewBox="0 0 1920 368" xmlns="http://www.w3.org/2000/svg">
-            <path class="fill-emphasis-bg" d="M1920 0.44L0 367.74V0H1920V0.44Z"></path>
-          </svg></div>
-        <div class="position-absolute bottom-0 end-0 start-0"><svg class="text-white w-100" viewBox="0 0 1920 368" xmlns="http://www.w3.org/2000/svg">
-            <path class="fill-emphasis-bg" d="M0 368L1920 0.730011L1920 368L0 368Z"></path>
-          </svg></div>
-        <div class="container-small position-relative py-1 px-lg-7 px-xxl-3" style="z-index:10">
-          <div class="mb-4 text-center text-sm-start">
-            <h4 class="text-primary fw-bolder mb-3">Team</h4>
-            <h2>Our small team behind our success</h2>
-          </div>
-          <p class="column-md-2 text-center text-sm-start">We have a small but strong development team to follow up on the development process. Reach out to us for further information. The team is ready to answer all your questions within minutes. The efficient team is always at your beck and call.</p>
-          <div class="row align-items-center ps-lg-11 pe-lg-9">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="text-center mt-5 position-relative">
-                <div class="team-avatar-container d-inline-block position-relative">
-                  <div class="bg-holder" style="background-image:url('{% static 'assets/img/bg/bg-21.png'%}');background-size:contain;"></div>
-                  <!--/.bg-holder-->
-                  <img class="img-fluid rounded mb-3 position-relative" src="{% static 'assets/img/team/62.webp'%}" alt="..." />
-                </div>
-                <h4>John Smith</h4>
-                <h6 class="mb-3 fw-semibold">CEO, Global Cheat</h6><a href="#!"><span class="fa-brands fa-facebook text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-twitter text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-linkedin-in text-primary"></span></a>
-              </div>
-            </div>
-         
-           
-          </div>
-        </div>
-      </section>
-<!-- ============================================-->
-      <!-- <section> begin ============================-->
-        <section>
-          <div class="container-small px-lg-7 px-xxl-3">
-            <div class="row g-0">
-              {% for partner in partners %}
-        
-              <div class="col-6 col-md-3">
-                <div class="p-2 p-lg-5 d-flex flex-center h-100 border-1 border-dashed border-bottom border-end border-translucent"><img class="img-fluid" src="{{ partner.image.url }}" alt="Partner" width="200"/></div>
-              </div>
-              {% endfor %}
-            </div>
-          </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
-  
-  <!-- ============================================-->
-      <!-- <section> Contact ============================-->
-      
-        {% block content %}
-        {% endblock %}
 
     <section class="booking-footer pb-6 pb-md-11 pt-15">
       <div class="container-medium">
