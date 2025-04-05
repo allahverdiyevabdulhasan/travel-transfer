@@ -2,9 +2,9 @@ from django.shortcuts import render
 from .models import *
 from django.shortcuts import render, redirect
 from .forms import *
-def home_page(request):
-    partners = Partner.objects.all()
-    return render(request, 'landing.html',{'partners': partners})
+# def home_page(request):
+#     partners = Partner.objects.all()
+#     return render(request, 'landing.html',{'partners': partners})
 
 
 def contact_view(request):

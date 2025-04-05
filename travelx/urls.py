@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include('core.urls')),
     # path('', include('flight.urls')),
     # path('', include('hotel.urls')),
-    # path('', include('transfer.urls')),
+    path('', include('transfer.urls')),
     # path('', include('trip.urls')),
     # path('', include('register.urls')),
     path('', include('blog.urls')),

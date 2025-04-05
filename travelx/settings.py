@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # 'register',
     # 'account',
     'core',
-    # 'transfer',
+    'transfer',
     # 'flight',
     'blog'
 

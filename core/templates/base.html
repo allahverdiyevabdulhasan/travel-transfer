@@ -83,7 +83,7 @@
     </div> -->
     <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
       <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a
-          class="navbar-brand flex-1 flex-lg-grow-0 me-lg-8 me-xl-13" href="../../index.html">
+          class="navbar-brand flex-1 flex-lg-grow-0 me-lg-8 me-xl-13" href="{% url 'base' %}">
           <div class="d-flex align-items-center"><img src="{% static 'assets/img/icons/logo.png' %}" alt="phoenix"
               width="27" />
             <h5 class="logo-text ms-2">Travelx</h5>
@@ -111,7 +111,7 @@
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
                 href="hotel/customer/homepage.html">About</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
-                href="{% url 'blog/blog' %}">Blog</a></li>
+                href="{% url 'blog_list' %}">Blog</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
                 href="trip/homepage.html">Gallery</a></li>
             <li class="nav-item border-bottom border-translucent border-bottom-lg-0"><a class="nav-link"
