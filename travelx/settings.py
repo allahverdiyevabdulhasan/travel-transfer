@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,14 +42,19 @@ INSTALLED_APPS = [
     # 'trip',
     # 'hotel',
     # 'register',
-    # 'account',
+    'account',
     'core',
     'transfer',
     # 'flight',
     'blog'
 
 ]
+AUTH_USER_MODEL = 'account.CustomUser'
 
+SITE_ID = 1
+
+# Email göndərmə üçün sadə konfiqurasiya (dev)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -146,3 +152,4 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

@@ -17,7 +17,7 @@
     <div class="row gx-3 gy-7">
       {% for blog in blogs %}
       <div class="col-lg-4">
-        <div class="blog-card"><img class="w-100 rounded-3" src="{{ blog.image.url }}" alt="" />
+        <div class="blog-card"><img class="w-100 border-1 rounded-3" src="{{ blog.image.url }}" alt="" />
           <div class="d-flex align-items-cente mt-3"></div>
           <span class="badge text-bg-primary mb-2 mt-4"> {{ blog.category.name }}</span>
           <h4 class="mb-3 pe-sm-5 lh-lg">{{ blog.title }}</h4>
