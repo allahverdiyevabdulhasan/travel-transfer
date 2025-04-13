@@ -42,19 +42,13 @@ INSTALLED_APPS = [
     # 'trip',
     # 'hotel',
     # 'register',
-    'account',
     'core',
     'transfer',
     # 'flight',
     'blog'
 
 ]
-AUTH_USER_MODEL = 'account.CustomUser'
 
-SITE_ID = 1
-
-# Email göndərmə üçün sadə konfiqurasiya (dev)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
