@@ -1,0 +1,32 @@
+
+<div class="py-7 border-top">
+    <div class="row g-0 gap-6 align-items-center">
+      {% if taxis %}
+        <div class="col-12">
+          <h4>Available Taxis</h4>
+          <ul>
+            {% for taxi in taxis %}
+              <li>
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h5>{{ taxi.name }} - {{ taxi.car_type }}</h5>
+                    <p><strong>Driver:</strong> {{ taxi.driver_name }}</p>
+                    <p><strong>Phone:</strong> {{ taxi.phone_number }}</p>
+                    <p><strong>Price (One Way):</strong> {{ taxi.one_way_price }}</p>
+                    {% if taxi.return_price %}
+                      <p><strong>Return Price:</strong> {{ taxi.return_price }}</p>
+                    {% endif %}
+                    <a href="{% url 'book_taxi' taxi.id %}" class="btn btn-primary">Book Now</a>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% else %}
+        <div class="col-12">
+          <p>No available taxis found. Please modify your search criteria.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>

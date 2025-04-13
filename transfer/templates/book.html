@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Taksi Rezervasyonu - {{ taxi.name }} - {{ taxi.car_type }}</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rezervasyon Detayları</h5>
+
+        <!-- Taksi Bilgilerini Gösterme -->
+        <div class="mb-3">
+          <label for="taxi" class="form-label">Taksi Bilgisi</label>
+          <p><strong>Şoför:</strong> {{ taxi.driver_name }}</p>
+          <p><strong>Telefon:</strong> {{ taxi.phone_number }}</p>
+          <p><strong>Araba Tipi:</strong> {{ taxi.car_type }}</p>
+          <p><strong>Alış Yeri:</strong> {{ taxi.pickup_location }}</p>
+          <p><strong>Varış Yeri:</strong> {{ taxi.destination }}</p>
+          <p><strong>Kapite:</strong> {{ taxi.capacity }} kişi</p>
+        </div>
+
+        <!-- Rezervasyon Formu -->
+        <div class="mb-3">
+          <label for="full_name" class="form-label">Ad Soyad</label>
+          <input type="text" class="form-control" id="full_name" name="full_name" value="{{ form.full_name.value }}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">E-posta</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ form.email.value }}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone_number" class="form-label">Telefon Numarası</label>
+          <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ form.phone_number.value }}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="journey_date" class="form-label">Seyahat Tarihi</label>
+          <input type="date" class="form-control" id="journey_date" name="journey_date" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="return_date" class="form-label">Dönüş Tarihi (Opsiyonel)</label>
+          <input type="date" class="form-control" id="return_date" name="return_date">
+        </div>
+
+        <div class="mb-3">
+          <label for="passengers" class="form-label">Yolcu Sayısı</label>
+          <input type="number" class="form-control" id="passengers" name="passengers" min="1" value="1" required>
+        </div>
+
+        <!-- Uçuş Tipi İçin Gizli Alan -->
+        <input type="hidden" name="flight_type" value="{{ request.GET.flight_type }}">
+        
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Rezervasyonu Onayla</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
