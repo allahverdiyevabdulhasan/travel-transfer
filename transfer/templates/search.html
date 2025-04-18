@@ -2,6 +2,73 @@
 {% load static %}
 
 {% block content %}
+{% block extra_css %}
+<style>
+  .card {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    background-color: #fff;
+    border: none;
+  }
+
+  .form-control {
+    border-radius: 0.75rem;
+    border: 1px solid #dfe4ea;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .form-control:focus {
+    border-color: #4c84ff;
+    box-shadow: 0 0 0 0.25rem rgba(76, 132, 255, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #4c84ff 0%, #1f60e1 100%);
+    border: none;
+    border-radius: 0.75rem;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #1f60e1 0%, #4c84ff 100%);
+  }
+
+  .list-group-item {
+    border: none;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s;
+  }
+
+  .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+
+  .list-group-item img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 8px;
+  }
+
+  .btn-success {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  h3.mt-4 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+</style>
+{% endblock %}
+
 <section class="p-0">
   <div class="container-fluid px-0">
     <div class="position-relative" style="height: 19rem;">
@@ -88,7 +155,7 @@
     {% for taxi in taxis %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <div>
-          <strong>{{ taxi.taxi_type }}</strong> - {{ taxi.passenger_capacity }} nəfər - {{ taxi.price }} AZN
+          <img class="w-10 border-1 rounded-3" src="{{ taxi.image.url }}" alt="" /><strong>{{ taxi.taxi_type }}</strong> - {{ taxi.passenger_capacity }} nəfər - {{ taxi.price }} AZN
         </div>
         <a class="btn btn-sm btn-success" href="{% url 'book_taxi' taxi.id %}">Book Now</a>
       </li>

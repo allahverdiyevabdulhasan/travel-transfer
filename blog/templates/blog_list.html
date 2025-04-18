@@ -1,36 +1,99 @@
+<style>
+  .blog-card-modern {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 1.5rem;
+}
 
+.blog-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+}
 
+.blog-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
 
+.blog-img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card-modern:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #f1f5f9;
+  color: #374151;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-see-more {
+  color: #5a67d8;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.btn-see-more:hover {
+  color: #4438ca;
+  text-decoration: underline;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+</style>
 {% extends "base.html" %}
 {% load static %}
 
-
-
 {% block content %}
-
 <section class="pt-10" id="blog">
   <div class="container-small px-lg-7 px-xxl-3">
     <div class="text-center mb-5 mb-8">
-      <h5 class="text-info mb-3">Blogs</h5>
-      <h2 class="mb-2">Our most viewed articles</h2>
+      <h5 class="text-gradient mb-3">📰 Blogs</h5>
+      <h2 class="mb-2 display-6 fw-bold">Our Most Viewed Articles</h2>
+      <p class="text-muted">Discover insights, stories and fresh ideas from our authors.</p>
     </div>
-    <div class="row gx-3 gy-7">
+    <div class="row gx-4 gy-6">
       {% for blog in blogs %}
-      <div class="col-lg-4">
-        <div class="blog-card"><img class="w-100 border-1 rounded-3" src="{{ blog.image.url }}" alt="" />
-          <div class="d-flex align-items-cente mt-3"></div>
-          <span class="badge text-bg-primary mb-2 mt-4"> {{ blog.category.name }}</span>
-          <h4 class="mb-3 pe-sm-5 lh-lg">{{ blog.title }}</h4>
-          <a
-            class="btn-link px-0 d-flex align-items-center fs-9 fw-bold" href="{% url 'blog_detail' blog.id %}" role="button">See more<span
-              class="fa-solid fa-angle-right ms-2"></span></a>
+      <div class="col-lg-4 d-flex">
+        <div class="blog-card-modern rounded-4 shadow-sm w-100 d-flex flex-column overflow-hidden bg-white">
+          <div class="blog-img-wrapper position-relative">
+            <img class="img-fluid w-100 blog-img" src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+            <span class="blog-category">{{ blog.category.name }}</span>
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <h4 class="fw-semibold mb-3 text-dark">{{ blog.title }}</h4>
+            <div class="mt-auto">
+              <a href="{% url 'blog_detail' blog.id %}" class="btn-see-more">
+                See More <i class="fa-solid fa-arrow-right-long ms-2"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       {% endfor %}
     </div>
-  </div><!-- end of .container-->
+  </div>
 </section>
-
-
-
 {% endblock %}

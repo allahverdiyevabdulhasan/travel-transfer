@@ -1,15 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ blog.title }}</title>
-</head>
-<body>
-    <h1>{{ blog.title }}</h1>
-    <p>Kategori: {{ blog.category.name }}</p>
-    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" width="500">
-    <p>{{ blog.description }}</p>
-    <a href="{% url 'blog_list' %}">Geri Dön</a>
-</body>
-</html>
+<style>
+    .blog-content p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge.bg-light {
+  background-color: #f1f5f9 !important;
+  color: #374151 !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+</style>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-6">
+  <div class="container-small px-4 px-md-5">
+    <div class="mb-5 text-center">
+      <span class="badge bg-light text-dark fw-semibold px-3 py-2 rounded-pill">{{ blog.category.name }}</span>
+      <h1 class="mt-4 fw-bold display-5">{{ blog.title }}</h1>
+    </div>
+
+    <div class="text-center mb-5">
+      <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="img-fluid rounded-4 shadow" style="max-height: 500px; object-fit: cover;">
+    </div>
+
+    <div class="blog-content px-md-5">
+      <p class="fs-5 lh-lg text-muted">{{ blog.description|linebreaks }}</p>
+    </div>
+
+    <div class="mt-5 text-center">
+      <a href="{% url 'blog_list' %}" class="btn btn-outline-primary rounded-pill px-4 py-2">
+        <i class="fa-solid fa-arrow-left-long me-2"></i> Geri Dön
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}
