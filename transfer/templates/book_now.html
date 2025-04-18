@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-0">
+    <div class="container-fluid px-0">
+      <div class="position-relative" style="height: 19rem;">
+        <div class="bg-holder"
+          style="background-image:url(../../../assets/img/bg/44.png);background-position: center; background-size: cover;">
+        </div>
+      </div>
+      <div class="container-small mb-6" style="margin-top: -12rem">
+<h2>Rezervasiya Et</h2>
+
+<p><strong>Seçdiyiniz Taksi:</strong> {{ taxi.taxi_type }} - {{ taxi.driver_first_name }} {{ taxi.driver_last_name }}</p>
+<p><strong>Gediş:</strong> {{ trip.pickup_location }} → {{ trip.destination }}</p>
+<p><strong>Gediş Vaxtı:</strong> {{ trip.departure_datetime|date:"d-m-Y H:i" }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="full_name">Ad və Soyad:</label>
+        <input type="text" id="full_name" name="full_name" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="ticket_number">Bilet Nömrəsi:</label>
+        <input type="text" id="ticket_number" name="ticket_number" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile_number">Mobil Nömrə:</label>
+        <input type="text" id="mobile_number" name="mobile_number" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="contact_preference">Əlaqə üsulu:</label>
+        <select id="contact_preference" name="contact_preference" class="form-control" required>
+            <option value="phone">Telefonla</option>
+            <option value="email">E-poçtla</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="note">Qeyd:</label>
+        <textarea id="note" name="note" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Rezervasiyanı Tamamla</button>
+</form>
+</div>
+</div><!-- end of .container-->
+</section>
+{% endblock %}

@@ -76,27 +76,7 @@
             </div>
           </form>
           
-          <!-- Results Section -->
-          {% if taxis %}
-          <div class="py-7 border-top">
-            <div class="row g-0 gap-6 align-items-center">
-              {% for taxi in taxis %}
-              <div class="col-md-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ taxi.name }}</h5>
-                    <p class="card-text">{{ taxi.pickup_location }} - {{ taxi.destination }}</p>
-                    <p class="card-text">Capacity: {{ taxi.capacity }} Passengers</p>
-                    <a href="{% url 'book_transfer' taxi.id %}" class="btn btn-primary">Book this Taxi</a>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          {% else %}
-          <p>No taxis found matching your search criteria.</p>
-          {% endif %}
+         
         </div>
       </div><!-- end of .container-->
     </section><!-- <section> close ============================-->

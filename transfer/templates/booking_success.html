@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Rezervasiya Tamamlandı</h2>
+
+<p><strong>Ad və Soyad:</strong> {{ booking.full_name }}</p>
+<p><strong>Telefon Nömrəsi:</strong> {{ booking.mobile_number }}</p>
+<p><strong>Taksi:</strong> {{ booking.taxi.taxi_type }} - {{ booking.taxi.driver_first_name }} {{ booking.taxi.driver_last_name }}</p>
+<p><strong>Gediş Yeri:</strong> {{ booking.trip_search.pickup_location }} → {{ booking.trip_search.destination }}</p>
+<p><strong>Rezervasiya Kodu:</strong> {{ booking.ticket_number }}</p>
+
+<p>Rezervasiyanız uğurla tamamlandı. Sizinlə əlaqə saxlanacaq.</p>
+
+<a href="{% url 'base' %}">Əsas səhifəyə qayıt</a>
+{% endblock %}

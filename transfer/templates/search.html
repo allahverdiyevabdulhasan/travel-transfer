@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="p-0">
+  <div class="container-fluid px-0">
+    <div class="position-relative" style="height: 19rem;">
+      <div class="bg-holder"
+        style="background-image:url(../../../assets/img/bg/44.png);background-position: center; background-size: cover;">
+      </div>
+    </div>
+    <div class="container-small mb-6" style="margin-top: -12rem">
+<form method="GET" action="{% url 'search_view' %}">
+  <div class="card position-relative mb-6">
+    <div class="card-body">
+      <div class="mb-4">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="oneWay" type="radio" name="trip_type" value="oneway"
+            {% if request.GET.trip_type == 'oneway' %}checked{% endif %}>
+          <label class="form-check-label fs-8 text-body" for="oneWay">One way</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="return" type="radio" name="trip_type" value="return"
+            {% if request.GET.trip_type != 'oneway' %}checked{% endif %}>
+          <label class="form-check-label fs-8 text-body" for="return">Return</label>
+        </div>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-lg">
+          <div class="row flex-center g-2">
+            <div class="col-sm">
+              <div class="form-floating flex-1">
+                <input class="form-control" id="fromLocation" type="text" name="pickup_location" placeholder="Pick-up location"
+                       value="{{ request.GET.pickup_location }}">
+                <label for="fromLocation">Enter Pick-up location</label>
+              </div>
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-phoenix-secondary circle-btn" type="button">
+                <span class="fas fa-arrows-rotate"></span>
+              </button>
+            </div>
+            <div class="col-sm">
+              <div class="form-floating flex-1">
+                <input class="form-control" id="toLocation" type="text" name="destination" placeholder="Destination"
+                       value="{{ request.GET.destination }}">
+                <label for="toLocation">Enter Destination</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="row g-2">
+            <div class="col-sm-6">
+              <div class="form-floating flex-1">
+                <input class="form-control" id="journeyDate" type="datetime-local" name="departure_date"
+                       value="{{ request.GET.departure_date }}">
+                <label for="journeyDate">Journey Date & Time</label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-floating flex-1">
+                <input class="form-control" id="returnDate" type="datetime-local" name="return_date"
+                       value="{{ request.GET.return_date }}">
+                <label for="returnDate">Return Date & Time</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-auto">
+          <div class="form-floating" style="min-width: 13rem">
+            <input class="form-control cursor-pointer" id="travelerCount" type="number" name="passenger_count"
+                   value="{{ request.GET.passenger_count }}" placeholder="1">
+            <label for="travelerCount">Number of Passengers</label>
+          </div>
+        </div>
+        <div class="col-lg-auto">
+          <button class="btn btn-lg btn-primary flex-1" type="submit" style="max-width: 15rem">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% if taxis %}
+  <h3 class="mt-4">Uyğun Taksilər</h3>
+  <ul class="list-group">
+    {% for taxi in taxis %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>{{ taxi.taxi_type }}</strong> - {{ taxi.passenger_capacity }} nəfər - {{ taxi.price }} AZN
+        </div>
+        <a class="btn btn-sm btn-success" href="{% url 'book_taxi' taxi.id %}">Book Now</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% elif taxis is not none %}
+  <p class="text-danger mt-4">Bu istiqamətdə uyğun taksi tapılmadı.</p>
+{% endif %}
+
+</div>
+</div><!-- end of .container-->
+</section>
+{% endblock %}
