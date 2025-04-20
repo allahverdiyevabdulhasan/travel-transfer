@@ -17,3 +17,7 @@ def contact_view(request):
             return redirect('success')  # Başarılı mesajı için yönlendirme
     
     return render(request, 'contact.html', {'form': form})
+
+def faq_list(request):
+    faqs = FAQ.objects.all().order_by('-created_at')
+    return render(request, 'faq.html', {'faqs': faqs})

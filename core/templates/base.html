@@ -98,11 +98,10 @@
               class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm"
               data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Switch theme"
               style="height:32px;width:32px;"><span class="icon" data-feather="sun"></span></label></div><a
-            class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="map-pin"
-              style="width: 18px; height: 18px"></span></a><a class="btn btn-link text-body-tertiary p-0"
-            href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a><a
-            class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#!"><span data-feather="user"
-              style="width: 20px; height: 20px"></span></a>
+            class="btn btn-link text-body-tertiary p-0" href="#!">
+            
+            </a>
+            
         </div><button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -120,7 +119,7 @@
         </div>
       </nav>
     </div>
-    
+
 
     <!-- ============================================-->
     <!-- <section> Galery ============================-->
@@ -132,28 +131,30 @@
     <!-- ============================================-->
     <!-- <section> Footer ============================-->
 
-     
-<!-- ============================================-->
-      <!-- <section> begin ============================-->
-        <section>
-          <div class="container-small px-lg-7 px-xxl-3">
-            <div class="row g-0">
-              {% for partner in partners %}
-        
-              <div class="col-6 col-md-3">
-                <div class="p-2 p-lg-5 d-flex flex-center h-100 border-1 border-dashed border-bottom border-end border-translucent"><img class="img-fluid" src="{{ partner.image.url }}" alt="Partner" width="200"/></div>
-              </div>
-              {% endfor %}
-            </div>
-          </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
-  
-  <!-- ============================================-->
-      <!-- <section> Contact ============================-->
-      
-        {% block content %}
-        {% endblock %}
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section>
+      <div class="container-small px-lg-7 px-xxl-3">
+        <div class="row g-0">
+          {% for partner in partners %}
+
+          <div class="col-6 col-md-3">
+            <div
+              class="p-2 p-lg-5 d-flex flex-center h-100 border-1 border-dashed border-bottom border-end border-translucent">
+              <img class="img-fluid" src="{{ partner.image.url }}" alt="Partner" width="200" /></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div><!-- end of .container-->
+    </section><!-- <section> close ============================-->
+    <!-- ============================================-->
+
+    <!-- ============================================-->
+    <!-- <section> Contact ============================-->
+
+    {% block content %}
+    {% endblock %}
 
     <section class="booking-footer pb-6 pb-md-11 pt-15">
       <div class="container-medium">
