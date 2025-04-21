@@ -21,3 +21,13 @@ def contact_view(request):
 def faq_list(request):
     faqs = FAQ.objects.all().order_by('-created_at')
     return render(request, 'faq.html', {'faqs': faqs})
+
+def about_view(request):
+    about = About.objects.first()
+    team = TeamMember.objects.all()
+    partners = Partner.objects.all()
+    return render(request, 'about.html', {
+        'about': about,
+        'team': team,
+        'partners': partners
+    })

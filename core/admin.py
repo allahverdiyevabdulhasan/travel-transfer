@@ -10,3 +10,5 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
 
 admin.site.register(FAQ)
+admin.site.register(About)
+admin.site.register(TeamMember)

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+<style>
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+{% block content %}
+<!-- AOS (Animate On Scroll) kitabxanası üçün -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- About Section -->
+<section class="py-5" style="background: linear-gradient(to right, #fdfbfb, #ebedee);">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-5">
+    {% if about.image %}
+    <div class="col-md-6 text-center" data-aos="fade-right">
+      <img src="{{ about.image.url }}" alt="About Image" class="img-fluid shadow rounded-4"
+           style="max-height: 400px; transition: transform 0.3s ease-in-out;"
+           onmouseover="this.style.transform='scale(1.05)'"
+           onmouseout="this.style.transform='scale(1)'">
+    </div>
+    {% endif %}
+    <div class="col-md-6" data-aos="fade-left">
+      <h2 class="mb-4 text-primary fw-bold" style="font-size: 2rem;">{{ about.title }}</h2>
+      <p class="lead text-dark" style="font-size: 1rem; line-height: 1.8;">
+        {{ about.description }}
+      </p>
+      <hr class="my-4" style="border-top: 3px solid #007bff; width: 80px;">
+      <p class="text-muted fst-italic">Səyahətiniz bizimlə fərqli olacaq 🌍</p>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<!-- Team Section -->
+<section class="py-5" style="background: linear-gradient(to right, #eef2f3, #ffffff);">
+    <div class="container">
+      <h3 class="text-center fw-bold mb-5 text-primary" style="font-size: 2.8rem;">Komandamız</h3>
+      <div class="row g-4 justify-content-center">
+        {% for member in team %}
+        <div class="col-sm-10 col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="card border-0 shadow-lg rounded-4 h-100 team-member position-relative overflow-hidden" style="transition: transform 0.3s;">
+            <div class="position-relative">
+              <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="img-fluid w-100"
+                   style="height: 300px; object-fit: cover; border-top-left-radius: 1.2rem; border-top-right-radius: 1.2rem; transition: transform 0.4s;">
+            </div>
+            <div class="card-body text-center px-4 py-4">
+              <h5 class="fw-bold text-dark mb-1">{{ member.name }}</h5>
+              <p class="text-primary mb-2" style="font-size: 1rem;">{{ member.role }}</p>
+              <p class="text-muted small bio" id="bio-{{ forloop.counter }}">
+                {{ member.bio|truncatechars:150 }}
+                {% if member.bio|length > 150 %}
+                  <span class="more-text d-none">{{ member.bio }}</span>
+                  <button class="btn btn-sm btn-link toggle-bio" data-target="bio-{{ forloop.counter }}">Daha çox</button>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hover Effects -->
+  <style>
+    .team-member:hover {
+      transform: translateY(-6px);
+    }
+    .team-member:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+  
+  <!-- Bio Toggle Script -->
+
+  
+  
+
+  
+
+<!-- Partners Section -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h3 class="mb-5">Partnyorlarımız</h3>
+    <div class="row justify-content-center align-items-center">
+      {% for partner in partners %}
+      <div class="col-6 col-md-3 mb-4" data-aos="zoom-in">
+        <a href="{{ partner.website }}" target="_blank">
+          <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="img-fluid grayscale" style="max-height: 100px;">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.toggle-bio').forEach(button => {
+        button.addEventListener('click', function () {
+          const bioId = this.getAttribute('data-target');
+          const bioContainer = document.getElementById(bioId);
+          const moreText = bioContainer.querySelector('.more-text');
+          if (moreText.classList.contains('d-none')) {
+            moreText.classList.remove('d-none');
+            this.textContent = "Daha az";
+          } else {
+            moreText.classList.add('d-none');
+            this.textContent = "Daha çox";
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}
